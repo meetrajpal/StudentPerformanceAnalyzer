@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,14 +13,14 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -28,31 +29,31 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-        
+
         .header {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
             padding: 30px;
             text-align: center;
         }
-        
+
         .header h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
             font-weight: 700;
         }
-        
+
         .header p {
             font-size: 1.1rem;
             opacity: 0.9;
         }
-        
+
         .upload-section {
             padding: 40px;
             text-align: center;
             border-bottom: 1px solid #eee;
         }
-        
+
         .file-input-wrapper {
             position: relative;
             display: inline-block;
@@ -64,12 +65,12 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
-        
+
         .file-input-wrapper:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
         }
-        
+
         #fileInput {
             position: absolute;
             opacity: 0;
@@ -77,12 +78,12 @@
             height: 100%;
             cursor: pointer;
         }
-        
+
         .results-section {
             padding: 40px;
             display: none;
         }
-        
+
         .class-container {
             margin-bottom: 40px;
             background: #f8f9fa;
@@ -90,7 +91,7 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
-        
+
         .class-header {
             background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
             color: white;
@@ -98,14 +99,14 @@
             font-size: 1.5rem;
             font-weight: 600;
         }
-        
+
         .performance-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             padding: 30px;
         }
-        
+
         .performance-category {
             background: white;
             border-radius: 12px;
@@ -113,23 +114,23 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
         }
-        
+
         .performance-category:hover {
             transform: translateY(-3px);
         }
-        
+
         .high-performers {
             border-left: 5px solid #28a745;
         }
-        
+
         .mediocre-performers {
             border-left: 5px solid #ffc107;
         }
-        
+
         .poor-performers {
             border-left: 5px solid #dc3545;
         }
-        
+
         .category-title {
             font-size: 1.3rem;
             font-weight: 600;
@@ -138,23 +139,23 @@
             align-items: center;
             gap: 10px;
         }
-        
+
         .high-performers .category-title {
             color: #28a745;
         }
-        
+
         .mediocre-performers .category-title {
             color: #856404;
         }
-        
+
         .poor-performers .category-title {
             color: #dc3545;
         }
-        
+
         .student-list {
             list-style: none;
         }
-        
+
         .student-item {
             background: #f8f9fa;
             margin: 8px 0;
@@ -163,24 +164,24 @@
             border-left: 3px solid transparent;
             transition: all 0.3s ease;
         }
-        
+
         .high-performers .student-item {
             border-left-color: #28a745;
         }
-        
+
         .mediocre-performers .student-item {
             border-left-color: #ffc107;
         }
-        
+
         .poor-performers .student-item {
             border-left-color: #dc3545;
         }
-        
+
         .student-item:hover {
             background: #e9ecef;
             transform: translateX(5px);
         }
-        
+
         .count-badge {
             background: rgba(255, 255, 255, 0.2);
             color: inherit;
@@ -189,14 +190,14 @@
             font-size: 0.9rem;
             font-weight: 500;
         }
-        
+
         .no-students {
             color: #6c757d;
             font-style: italic;
             text-align: center;
             padding: 20px;
         }
-        
+
         .summary-stats {
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
             color: #5a5a5a;
@@ -208,50 +209,52 @@
             gap: 15px;
             text-align: center;
         }
-        
+
         .stat-item {
             background: rgba(255, 255, 255, 0.3);
             padding: 15px;
             border-radius: 8px;
         }
-        
+
         .stat-number {
             font-size: 2rem;
             font-weight: 700;
             display: block;
         }
-        
+
         .stat-label {
             font-size: 0.9rem;
             font-weight: 500;
         }
-        
+
         .icon {
             font-size: 1.2rem;
         }
-        
+
         @media (max-width: 768px) {
             .performance-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .header h1 {
                 font-size: 2rem;
             }
-            
-            .upload-section, .results-section {
+
+            .upload-section,
+            .results-section {
                 padding: 20px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
             <h1>📊 Student Performance Analyzer</h1>
             <p>Upload your Excel file to categorize students by performance levels</p>
         </div>
-        
+
         <div class="upload-section">
             <div class="file-input-wrapper" onclick="document.getElementById('fileInput').click()">
                 <input type="file" id="fileInput" accept=".xlsx,.xls" style="display: none;" />
@@ -260,7 +263,7 @@
             <p style="margin-top: 15px; color: #6c757d;">Select your Excel file containing student performance data</p>
             <div id="fileName" style="margin-top: 10px; color: #28a745; font-weight: 600;"></div>
         </div>
-        
+
         <div class="results-section" id="resultsSection">
             <div class="summary-stats" id="summaryStats"></div>
             <div id="classResults"></div>
@@ -268,4 +271,212 @@
     </div>
 
 </body>
+
+<script>
+    document.getElementById('fileInput').addEventListener('change', handleFile);
+
+    function handleFile(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        document.getElementById('fileName').textContent = `Selected: ${file.name}`;
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            try {
+                const data = new Uint8Array(e.target.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+                const sheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[sheetName];
+                const jsonData = XLSX.utils.sheet_to_json(worksheet);
+
+                if (jsonData.length === 0) {
+                    alert('No data found in the Excel file. Please check your file.');
+                    return;
+                }
+
+                processStudentData(jsonData);
+            } catch (error) {
+                alert('Error reading file: ' + error.message);
+                console.error('File reading error:', error);
+            }
+        };
+        reader.readAsArrayBuffer(file);
+    }
+
+    function processStudentData(data) {
+        const originalTotalStudents = data.length;
+
+        const gradePoints = { 'A': 3, 'B': 2, 'C': 1 };
+
+        const performanceColumns = [
+            'Sub- Knowledge (10)',
+            'Goal Clarity (10)',
+            'Learning Attitude (10)',
+            'Communication Skills (10)',
+            'Attitude & Behaviour (10)',
+            'Confidence (10)',
+            'Resume (10)'
+        ];
+
+        const studentsWithScores = data.map(student => {
+            let totalScore = 0;
+            let validGrades = 0;
+
+            performanceColumns.forEach(column => {
+                const grade = student[column];
+                if (grade && gradePoints[grade.toUpperCase()]) {
+                    totalScore += gradePoints[grade.toUpperCase()];
+                    validGrades++;
+                }
+            });
+
+            const averageScore = validGrades > 0 ? totalScore / validGrades : 0;
+
+            return {
+                ...student,
+                averageScore: averageScore,
+                performanceLevel: getPerformanceLevel(averageScore)
+            };
+        }).filter(student => {
+            const remarks = student.Remarks || '';
+            const isAbsentByRemarks = remarks.toLowerCase().includes('absent');
+            const isAbsentByScore = student.averageScore === 0;
+
+            return !isAbsentByRemarks && !isAbsentByScore;
+        });
+
+        const presentStudents = studentsWithScores.length;
+
+        const classwiseData = _.groupBy(studentsWithScores, 'Class');
+
+        displayResults(classwiseData, originalTotalStudents, presentStudents);
+    }
+
+    function getPerformanceLevel(score) {
+        if (score >= 2.5) return 'High';
+        if (score >= 1.5) return 'Mediocre';
+        return 'Poor';
+    }
+
+    function displayResults(classwiseData, originalTotal, presentTotal) {
+        const resultsSection = document.getElementById('resultsSection');
+        const classResults = document.getElementById('classResults');
+        const summaryStats = document.getElementById('summaryStats');
+
+        let totalHigh = 0;
+        let totalMediocre = 0;
+        let totalPoor = 0;
+
+        Object.values(classwiseData).forEach(students => {
+            students.forEach(student => {
+                switch (student.performanceLevel) {
+                    case 'High': totalHigh++; break;
+                    case 'Mediocre': totalMediocre++; break;
+                    case 'Poor': totalPoor++; break;
+                }
+            });
+        });
+
+        const absentStudents = originalTotal - presentTotal;
+
+        summaryStats.innerHTML = `
+                <div class="stat-item">
+                    <span class="stat-number">${originalTotal}</span>
+                    <span class="stat-label">Total Students</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">${presentTotal}</span>
+                    <span class="stat-label">Present Students</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">${absentStudents}</span>
+                    <span class="stat-label">Absent Students</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">${totalHigh}</span>
+                    <span class="stat-label">High Performers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">${totalMediocre}</span>
+                    <span class="stat-label">Mediocre</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">${totalPoor}</span>
+                    <span class="stat-label">Poor Performers</span>
+                </div>
+            `;
+
+        classResults.innerHTML = '';
+
+        Object.keys(classwiseData).sort().forEach(className => {
+            const students = classwiseData[className];
+            const highPerformers = students.filter(s => s.performanceLevel === 'High');
+            const mediocrePerformers = students.filter(s => s.performanceLevel === 'Mediocre');
+            const poorPerformers = students.filter(s => s.performanceLevel === 'Poor');
+
+            const classDiv = document.createElement('div');
+            classDiv.className = 'class-container';
+            classDiv.innerHTML = `
+                    <div class="class-header">
+                        🎓 Class: ${className} (${students.length} present students)
+                    </div>
+                    <div class="performance-grid">
+                        <div class="performance-category high-performers">
+                            <div class="category-title">
+                                <span class="icon">🌟</span>
+                                High Performers
+                                <span class="count-badge">${highPerformers.length}</span>
+                            </div>
+                            ${createStudentList(highPerformers)}
+                        </div>
+                        <div class="performance-category mediocre-performers">
+                            <div class="category-title">
+                                <span class="icon">⭐</span>
+                                Mediocre Performers
+                                <span class="count-badge">${mediocrePerformers.length}</span>
+                            </div>
+                            ${createStudentList(mediocrePerformers)}
+                        </div>
+                        <div class="performance-category poor-performers">
+                            <div class="category-title">
+                                <span class="icon">📈</span>
+                                Poor Performers
+                                <span class="count-badge">${poorPerformers.length}</span>
+                            </div>
+                            ${createStudentList(poorPerformers)}
+                        </div>
+                    </div>
+                `;
+
+            classResults.appendChild(classDiv);
+        });
+
+        resultsSection.style.display = 'block';
+    }
+
+    function createStudentList(students) {
+        if (students.length === 0) {
+            return '<div class="no-students">No students in this category</div>';
+        }
+
+        const sortedStudents = students.sort((a, b) => b.averageScore - a.averageScore);
+
+        const listItems = sortedStudents.map(student => {
+            const enrollmentNo = student['Enrollment-No'] || 'N/A';
+            const fullName = student['Full-Name'] || 'Unknown';
+            const score = student.averageScore.toFixed(2);
+
+            return `
+                    <li class="student-item">
+                        <strong>${fullName}</strong><br>
+                        <small>Enrollment: ${enrollmentNo} | Score: ${score}/3.0</small>
+                    </li>
+                `;
+        }).join('');
+
+        return `<ul class="student-list">${listItems}</ul>`;
+    }
+</script>
+
 </html>
